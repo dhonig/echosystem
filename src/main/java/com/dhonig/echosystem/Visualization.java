@@ -1,26 +1,34 @@
 package com.dhonig.echosystem;
 
+import com.dhonig.Circle;
 import processing.core.PApplet;
 
-public class Visualization extends PApplet
-{
-    public static void main(String[] args) {
-        PApplet.main("com.dhonig.echosystem.Visualization");
-    }
+public class Visualization extends PApplet {
+
+    static int WIDTH=1024;
+    static int HEIGHT=768;
+
+
+    Circle c;
+
 
     @Override
     public void settings() {
-        size(640, 480);
+        size(WIDTH, HEIGHT);
     }
 
     @Override
     public void setup() {
-        fill(120,50,240);
+        this.fill(120,50,240);
+         c= new Circle(this);
     }
 
     @Override
     public void draw(){
-        ellipse(width/2,height/2,second(),second());
+        c.draw();
     }
 
+    public static void main(String[] args) {
+        PApplet.main("com.dhonig.echosystem.Visualization");
+    }
 }
